@@ -1,17 +1,5 @@
-# This is a heading
+# Extracting and Interpreting Acoustic data with Praat and Parselmouth
+A technical tutorial for harnessing the power of Praat with Python
 
-## Here's a smaller heading
-
-This is a paragraph
-
-* Here's a bulleted list
-* Another item
-
-1. And an ordered list
-1. The numbers don't matter
-
-> This is a qoute
-
-[This is a link to Google](https://google.com) 
-
-Lets try
+## Introduction
+Praat is 
