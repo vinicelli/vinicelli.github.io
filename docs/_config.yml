@@ -1,1 +1,5 @@
-
+title: Gathering Acoustic Features using Praat and Parselmouth
+description: A technical tutorial for using Praat through Python
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-modernist
