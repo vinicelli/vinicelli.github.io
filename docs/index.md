@@ -13,6 +13,6 @@ In order to run the examples in this tutorial, you will need Python 3, Praat, an
 ## Loading a Sound file Using Parselmouth
 Parselmouth makes it very easy to load a sound file for analysis.
 
-```import parselmouth as pm
+``` import parselmouth as pm
 
-sound = pm.Sound(Test.wav)```
+sound = pm.Sound(Test.wav) ```
