@@ -1,5 +1,5 @@
-title: Extracting and Interpreting Acoustic data with Praat and Parselmouth
+title: Analyzing and Interpreting Speech Patterns with Praat and Parselmouth
 description: A technical tutorial for harnessing the power of Praat with Python
 show_downloads: false
 google_analytics:
-theme: jekyll-theme-Tactile
+theme: jekyll-theme-modernist
