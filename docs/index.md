@@ -9,3 +9,10 @@ In this tutorial I hope to give you a very brief look into the capabilities of P
 
 ## Prerequisites
 In order to run the examples in this tutorial, you will need Python 3, Praat, and Parsertongue installed on your machine. These were run wothin Jupyter notebooks in a native Linux environent (Ubuntu 20.04.6).
+
+## Loading a Sound file Using Parselmouth
+Parselmouth makes it very easy to load a sound file for analysis.
+
+```import parselmouth as pm
+
+sound = pm.Sound(Test.wav)```
