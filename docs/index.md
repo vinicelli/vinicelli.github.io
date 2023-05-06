@@ -8,7 +8,7 @@ Praat is a popular software package mainly used for speech analysis. It has been
 In this tutorial I hope to give you a very brief look into the capabilities of Praat, and some strategies to use Parselmouth for NLP tasks.
 
 ## Prerequisites
-In order to run the examples in this tutorial, you will need Python 3, Praat, and Parsertongue installed on your machine. These were run wothin Jupyter notebooks in a native Linux environent (Ubuntu 20.04.6).
+In order to run the examples in this tutorial, you will need Python 3, Praat, and Parsertongue installed on your machine. These were run within Jupyter notebooks in a native Linux environent (Ubuntu 20.04.6).
 
 ## Loading a Sound file Using Parselmouth
 Parselmouth makes it very easy to load a sound file for analysis.
