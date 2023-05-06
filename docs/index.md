@@ -59,5 +59,9 @@ We can also simply average things like pitch and formants from a sound file.
 import numpy as np
 pitch_values = pitch.selected_array['frequency']
 mean_pitch = np.mean(pitch_values)
-print(mean_pitch, mean_)
+
+print(mean_pitch)
+```
+```
+150.57656235439302
 ```
