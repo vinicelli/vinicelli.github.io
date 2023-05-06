@@ -24,15 +24,17 @@ The included test file includes a short clip of me saying "This is a sentence I 
 
 We can use other common libraries like matplotlib to visualize the recording, with things like spectrograms and pitch contour plots.
 ```
+import parselmouth
 import matplotlib.pyplot as plt
 
-sound = parselmouth.Sound("ShortenedTest.wav")
+voice = parselmouth.Sound("ShortenedTest.wav")
 
-spectrogram = sound.to_spectrogram()
+spectrogram = voice.to_spectrogram()
 
 plt.imshow(spectrogram.values.T, aspect='auto', origin='lower', cmap='jet')
 plt.xlabel("Time (s)")
 plt.ylabel("Frequency (Hz)")
 plt.show()
 ```
+![Output](https://vinicelli.github.com/resources/minion.png)
 
