@@ -36,5 +36,5 @@ plt.xlabel("Time (s)")
 plt.ylabel("Frequency (Hz)")
 plt.show()
 ```
-![Output](https://vinicelli.github.io/Spectrogram.png)
+![Output](https://raw.githubusercontent.com/vinicelli/vinicelli.github.io/main/Spectrogram.png)
 
