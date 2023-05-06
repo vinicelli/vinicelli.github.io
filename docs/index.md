@@ -22,7 +22,7 @@ From there, the file is ready to be read and manipulated using Praat.
 
 The included test file includes a short clip of me saying "This is a sentence I am recording for Praat." Feel free to use any audio file you'd like, but know that these programs are happiest when working with .wav files.
 
-We can use other common libraries like matplotlib to visualize the recording, with things like spectrograms and pitch contour plots.
+We can use other common libraries like matplotlib to visualize the recording, with things like spectrograms:
 ```
 import parselmouth
 import matplotlib.pyplot as plt
@@ -38,3 +38,18 @@ plt.show()
 ```
 ![Output](https://raw.githubusercontent.com/vinicelli/vinicelli.github.io/main/Spectrogram.png)
 
+...or pitch contour plots:
+```
+pitch = voice.to_pitch()
+
+# Get the pitch contour values and times
+pitch_values = pitch.selected_array['frequency']
+pitch_times = pitch.xs()
+
+# Plot the pitch contour using matplotlib
+plt.plot(pitch_times, pitch_values, linewidth=2, color='black')
+plt.xlabel("Time (s)")
+plt.ylabel("Pitch (Hz)")
+plt.show()
+```
+![Output](https://raw.githubusercontent.com/vinicelli/vinicelli.github.io/main/Pitch_Contour.png)
