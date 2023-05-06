@@ -53,3 +53,11 @@ plt.ylabel("Pitch (Hz)")
 plt.show()
 ```
 ![Output](https://raw.githubusercontent.com/vinicelli/vinicelli.github.io/main/Pitch_Contour.png)
+
+We can also simply average things like pitch and formants from a sound file. 
+```
+import numpy as np
+pitch_values = pitch.selected_array['frequency']
+mean_pitch = np.mean(pitch_values)
+print(mean_pitch, mean_)
+```
