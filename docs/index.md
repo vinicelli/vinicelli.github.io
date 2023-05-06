@@ -18,3 +18,21 @@ import parselmouth as pm
 
 sound = pm.Sound(Test.wav) 
 ```
+From there, the file is ready to be read and manipulated using Praat.
+
+The included test file includes a short clip of me saying "This is a sentence I am recording for Praat." Feel free to use any audio file you'd like, but know that these programs are happiest when working with .wav files.
+
+We can use other common libraries like matplotlib to visualize the recording, with things like spectrograms and pitch contour plots.
+```
+import matplotlib.pyplot as plt
+
+sound = parselmouth.Sound("ShortenedTest.wav")
+
+spectrogram = sound.to_spectrogram()
+
+plt.imshow(spectrogram.values.T, aspect='auto', origin='lower', cmap='jet')
+plt.xlabel("Time (s)")
+plt.ylabel("Frequency (Hz)")
+plt.show()
+```
+
