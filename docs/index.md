@@ -7,8 +7,8 @@ Praat is a popular software package mainly used for speech analysis. It has been
 
 In this tutorial I hope to give you a very brief look into the capabilities of Praat, and some strategies to use Parselmouth for NLP tasks.
 
-## Prerequisites
-In order to run the examples in this tutorial, you will need Python 3, Praat, and Parsertongue installed on your machine. These were run within Jupyter notebooks in a native Linux environent (Ubuntu 20.04.6).
+## Requirements
+In order to run the examples in this tutorial, you will need Python 3 or higher, Praat Version 6.03.09, and the Parsertongue Python Library installed on your machine. These were run within Jupyter notebooks in a native Linux environent (Ubuntu 20.04.6). All supplemental software referenced here is licensed under the GNU General Public License V3, and is open source. 
 
 ## Loading a Sound file Using Parselmouth
 Parselmouth makes it very easy to load a sound file for analysis.
@@ -69,7 +69,7 @@ We can use other common libraries like Matplotlib to visualize the recording, wi
 import parselmouth
 import matplotlib.pyplot as plt
 
-voice = parselmouth.Sound("ShortenedTest.wav")
+voice = parselmouth.Sound("Test.wav")
 
 spectrogram = voice.to_spectrogram()
 
@@ -111,7 +111,7 @@ plt.show()
 ```
 ![Output](https://raw.githubusercontent.com/vinicelli/vinicelli.github.io/main/Waveform.png)
 
-We can also simply average things like pitch and formants from a sound file. 
+We can also average measurements like pitch and formants across the span of a sound file. 
 ```
 import numpy as np
 pitch_values = pitch.selected_array['frequency']
