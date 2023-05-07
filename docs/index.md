@@ -132,6 +132,11 @@ import numpy as np
 
 def display_formants(file_path):
 
+    """
+    Displays formants as F1, F2, and F3 at certain increments of time from an audio file.
+    Input:  A file path
+    Output: Prints an array of formants at increments of time
+    """
     sound = parselmouth.Sound(file_path)
 
     formants = sound.to_formant_burg(max_number_of_formants=3)
@@ -184,6 +189,8 @@ Time: 0.201, F1: 509.61, F2: 3903.61, F3: 4920.06
 Time: 0.207, F1: 3971.57, F2: 4813.88, F3: nan
 Time: 0.214, F1: 237.33, F2: 3865.56, F3: 4607.74
 ```
+
+Note that it is normal for formant calculations to include nan values, based on low input volume or noise.
 
 
  
