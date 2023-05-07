@@ -88,10 +88,25 @@ pitch = voice.to_pitch()
 pitch_values = pitch.selected_array['frequency']
 pitch_times = pitch.xs()
 
-# Plot the pitch contour using matplotlib
 plt.plot(pitch_times, pitch_values, linewidth=2, color='black')
 plt.xlabel("Time (s)")
 plt.ylabel("Pitch (Hz)")
+plt.show()
+```
+![Output](https://raw.githubusercontent.com/vinicelli/vinicelli.github.io/main/Pitch_Contour.png)
+
+...or simple waveform displays:
+```
+waveform = sound.values.T
+
+duration = sound.duration
+
+time = sound.xmin + np.arange(len(waveform)) / float(sound.sampling_frequency)
+
+plt.plot(time, waveform, color='black')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.xlim([0, duration])
 plt.show()
 ```
 ![Output](https://raw.githubusercontent.com/vinicelli/vinicelli.github.io/main/Pitch_Contour.png)
@@ -107,7 +122,7 @@ print(mean_pitch)
 ```
 150.57656235439302
 ```
-These values can be used for recognizing speech emotion, the identity of the speaker, or even regional accents.
+While averaging an entire sentence may not be very useful, averaging many individual waveform files split into single words or phonemes can be used as features for classifying the demographics of the speaker. The resulting values can be used for recognizing speech emotion, the identity of the speaker, or even regional accents.
 
  
 
