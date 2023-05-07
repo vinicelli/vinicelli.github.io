@@ -22,7 +22,7 @@ From there, the file is ready to be read and manipulated using Praat.
 
 The included test file includes a short clip of me saying "This is a sentence I am recording for Praat." Feel free to use any audio file you'd like, but know that these programs are happiest when working with .wav files.
 
-Here is an example of a variable made using Parselmouth's pitch method, which tracks information about the pitch over the duration of the audio file.
+Here is an example of a variable made using Parselmouth's pitch method, which stores information about the pitch over the duration of the audio file.
 ```
 pitch = sound.to_pitch()
 print(pitch)
@@ -123,6 +123,68 @@ print(mean_pitch)
 150.57656235439302
 ```
 While averaging an entire sentence may not be very useful, averaging many individual waveform files split into single words or phonemes can be used as features for classifying the demographics of the speaker. The resulting values can be used for recognizing speech emotion, the identity of the speaker, or even regional accents.
+
+## Displaying Formant Data as an Array
+Here's a simple function to display formant data (visualized above) for  three formants at all of the key times stored in the formants object.
+```
+import parselmouth
+import numpy as np
+
+def display_formants(file_path):
+
+    sound = parselmouth.Sound(file_path)
+
+    formants = sound.to_formant_burg(max_number_of_formants=3)
+
+    times = formants.xs()
+    formant_values = np.array([[
+    formants.get_value_at_time(1, t), 
+    formants.get_value_at_time(2, t), 
+    formants.get_value_at_time(3, t) 
+    ] for t in times])
+
+    print("Formant values:")
+    for t, f1, f2, f3 in zip(times, formant_values[:,0], formant_values[:,1], formant_values[:,2]):
+        print("Time: {:.3f}, F1: {:.2f}, F2: {:.2f}, F3: {:.2f}".format(t, f1, f2, f3))
+
+display_formants("Test.wav")
+```
+```
+#Only the first 20 results shown
+Formant values:
+Time: 0.026, F1: 679.66, F2: 3871.67, F3: nan
+Time: 0.032, F1: 591.46, F2: 2979.99, F3: 4231.13
+Time: 0.039, F1: 494.59, F2: 3985.75, F3: nan
+Time: 0.045, F1: 315.03, F2: 3583.33, F3: nan
+Time: 0.051, F1: 316.56, F2: 2808.21, F3: 3915.48
+Time: 0.057, F1: 339.82, F2: 2265.67, F3: 3843.62
+Time: 0.064, F1: 368.22, F2: 2277.89, F3: 3825.53
+Time: 0.070, F1: 386.27, F2: 2365.04, F3: 3839.37
+Time: 0.076, F1: 389.71, F2: 2527.27, F3: 3900.74
+Time: 0.082, F1: 390.98, F2: 2522.16, F3: 3947.92
+Time: 0.089, F1: 402.59, F2: 2296.24, F3: 3923.87
+Time: 0.095, F1: 406.99, F2: 2533.48, F3: 4143.36
+Time: 0.101, F1: 367.42, F2: 2896.31, F3: 4414.31
+Time: 0.107, F1: 3353.61, F2: 4466.30, F3: nan
+Time: 0.114, F1: 102.56, F2: 3563.72, F3: 4559.57
+Time: 0.120, F1: 3783.21, F2: 4607.31, F3: nan
+Time: 0.126, F1: 3855.56, F2: 4653.59, F3: nan
+Time: 0.132, F1: 3873.59, F2: 4685.67, F3: nan
+Time: 0.139, F1: 4538.29, F2: 4726.09, F3: nan
+Time: 0.145, F1: 536.70, F2: 4211.27, F3: 4690.90
+Time: 0.151, F1: 3807.91, F2: 4717.06, F3: nan
+Time: 0.157, F1: 3710.77, F2: 4772.50, F3: nan
+Time: 0.164, F1: 3874.92, F2: 4871.99, F3: nan
+Time: 0.170, F1: 198.48, F2: 3923.39, F3: 4749.48
+Time: 0.176, F1: 586.72, F2: 4175.50, F3: 4601.51
+Time: 0.182, F1: 3976.58, F2: 4574.92, F3: nan
+Time: 0.189, F1: 4000.93, F2: 4512.30, F3: nan
+Time: 0.195, F1: 289.53, F2: 4279.48, F3: nan
+Time: 0.201, F1: 509.61, F2: 3903.61, F3: 4920.06
+Time: 0.207, F1: 3971.57, F2: 4813.88, F3: nan
+Time: 0.214, F1: 237.33, F2: 3865.56, F3: 4607.74
+```
+
 
  
 
