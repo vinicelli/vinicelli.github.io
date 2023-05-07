@@ -1,3 +1,3 @@
 # vinicelli.github.io
 
-This will be the location of my Technical Tutorial for Praat?
+A technical tutorial going over the capabilities of Praat and a compatible Python library Parselmouth.
