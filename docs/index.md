@@ -192,6 +192,7 @@ Time: 0.214, F1: 237.33, F2: 3865.56, F3: 4607.74
 
 Note that it is normal for formant calculations to include nan values, based on low input volume or noise.
 
+From here, you could build prediction models for vowel or word prediction, or use silence data to split the .wav file up into individual phonemes, words, or phrases. 
 
  
 
