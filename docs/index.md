@@ -109,7 +109,7 @@ plt.ylabel('Amplitude')
 plt.xlim([0, duration])
 plt.show()
 ```
-![Output](https://raw.githubusercontent.com/vinicelli/vinicelli.github.io/main/Pitch_Contour.png)
+![Output](https://raw.githubusercontent.com/vinicelli/vinicelli.github.io/main/Waveform.png)
 
 We can also simply average things like pitch and formants from a sound file. 
 ```
